@@ -1,0 +1,25 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "body-parser": "^1.15.2",
+    "chilkat_node6_linux64": "^9.50.65",
+    "express": "^4.13.2",
+    "eyes": "^0.1.8",
+    "install": "^0.8.7",
+    "npm": "^4.2.0",
+    "pg": "6.1.2",
+    "promise": "^7.1.1",
+    "request": "^2.79.0",
+    "xml-parser": "^1.2.1",
+    "xml2js": "^0.4.17"
+  }
+}
