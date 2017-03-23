@@ -143,7 +143,7 @@ function connectToSF(callback2){
 
 	// Configure the request
 	var options = {
-	   url: 'https://test.salesforce.com/services/Soap/u/36.0',
+	   url: 'https://login.salesforce.com/services/Soap/u/36.0',
 	    method: 'POST',
 	    headers: headers,
 	    body:'<?xml version="1.0" encoding="utf-8" ?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><n1:login xmlns:n1="urn:partner.soap.sforce.com"><n1:username>'+ConfigVars.un+'</n1:username><n1:password>'+ConfigVars.pw+'</n1:password></n1:login></env:Body></env:Envelope>'
