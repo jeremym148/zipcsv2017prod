@@ -72,7 +72,8 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		} 
 
 		today = mm+'/'+dd+'/'+yyyy;
-    entry = zip.AppendString2("CAPRETRAITE.csv",csv,"utf-8");
+		var nameFile='CAPRETRAITE-'+refId+'-'+today+'.csv';
+    entry = zip.AppendString2(nameFile,csv,"utf-8");
 
     zipFileInMemory = zip.WriteToMemory();
     if (zipFileInMemory == null ) {
