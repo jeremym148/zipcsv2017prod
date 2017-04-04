@@ -63,6 +63,10 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		var dd = today.getDate();
 		var mm = today.getMonth()+1; //January is 0!
 		var yyyy = today.getFullYear();
+		var seconds = today.getSeconds();
+		var minutes = today.getMinutes();
+		var hour = today.getHours();
+
 
 		if(dd<10) {
 		    dd='0'+dd
@@ -71,8 +75,8 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		    mm='0'+mm
 		} 
 
-		today = mm+'/'+dd+'/'+yyyy;
-		var nameFile='CAPRETRAITE-'+refId+'-'+today+'.csv';
+	today = mm+dd+yyyy+'-'+hour+'-'+minutes+'-'+seconds;
+	var nameFile='CAPRETRAITE-'+refId+'-'+today+'.csv';
     entry = zip.AppendString2(nameFile,csv,"utf-8");
 
     zipFileInMemory = zip.WriteToMemory();
