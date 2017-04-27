@@ -75,8 +75,8 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		    mm='0'+mm
 		} 
 		var theRefId='';
-		if(refId.length()<5){
-	        for(var j=0;j<(5-refId.length());j++){
+		if(refId.length<5){
+	        for(var j=0;j<(5-refId.length);j++){
 	            TherefId+='0';
 	        }
 	        theRefId+=refId;
