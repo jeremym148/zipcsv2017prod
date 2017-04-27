@@ -74,9 +74,22 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		if(mm<10) {
 		    mm='0'+mm
 		} 
+		var theRefId='';
+		if(refId.length()<5){
+	        integer j;
+	        for(j=0;j<(5-refId.length());j++){
+	            TherefId+='0';
+	        }
+	        theRefId+=refId;
+	    }
+	    else{
+	        theRefId=refId;
 
-	today = mm+dd+yyyy+'-'+hour+'-'+minutes+'-'+seconds;
-	var nameFile='CAPRETRAITE-'+refId+'-'+today+'.csv';
+	    }
+
+
+	today = yyyy+mm+dd+'-'+hour+'-'+minutes+'-'+seconds;
+	var nameFile='CAPRETRAITE-'+theRefId+'-'+today+'.csv';
     entry = zip.AppendString2(nameFile,csv,"utf-8");
 
     zipFileInMemory = zip.WriteToMemory();
@@ -90,25 +103,28 @@ function chilkatExample(csv,objId,password,refId, callback) {
         return;
     }
     console.log(zip64);
-     sendDocToSF(zip64,objId,refId,callback);
+     sendDocToSF(zip64,objId,theRefId,today,callback);
 }
 
 
-function sendDocToSF(zip64,objId,refId,callback){
+function sendDocToSF(zip64,objId,refId,today,callback){
 	connectToSF(function(sessionId) {
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth()+1; //January is 0!
-		var yyyy = today.getFullYear();
+		// var dd = today.getDate();
+		// var mm = today.getMonth()+1; //January is 0!
+		// var yyyy = today.getFullYear();
+		// var seconds = today.getSeconds();
+		// var minutes = today.getMinutes();
+		// var hour = today.getHours();
 
-		if(dd<10) {
-		    dd='0'+dd
-		} 
-		if(mm<10) {
-		    mm='0'+mm
-		} 
 
-		today = mm+'/'+dd+'/'+yyyy;
+		// if(dd<10) {
+		//     dd='0'+dd
+		// } 
+		// if(mm<10) {
+		//     mm='0'+mm
+		// } 
+
+		// today = yyyy+mm+dd+'-'+hour+'-'+minutes+'-'+seconds;
 		var nameFile='CAPRETRAITE-'+refId+'-'+today+'.7z';
 		// Set the headers
 		var headers = {
