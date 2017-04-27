@@ -55,7 +55,7 @@ function chilkatExample(csv,objId,password,refId, callback) {
         console.log(zip.LastErrorText);
         return;
     }
-     zip.EncryptPassword(password);
+     zip.SetPassword(password);
     zip.PasswordProtect = true;
 
     //  Add the string "Hello World!" to the .zip
