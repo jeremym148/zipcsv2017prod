@@ -74,13 +74,13 @@ function chilkatExample(csv,objId,password,refId, callback) {
 		if(mm<10) {
 		    mm='0'+mm
 		} 
-		if(seconds<10 &&seconds.length<2) {
+		if(seconds<10 ) {
 		    seconds='0'+seconds
 		}
-		if(minutes<10&&minutes.length<2) {
+		if(minutes<10) {
 		    minutes='0'+minutes
 		}
-		if(hour<10&&hour.length<2) {
+		if(hour<10) {
 		    hour='0'+hour
 		}
 		var theRefId='';
